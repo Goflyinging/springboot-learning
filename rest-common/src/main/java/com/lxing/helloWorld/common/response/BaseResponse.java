@@ -8,6 +8,7 @@ package com.lxing.helloWorld.common.response;
  */
 public class BaseResponse {
 
+  private boolean success = false;
   private int status = 200;
   private String message;
 
@@ -17,6 +18,7 @@ public class BaseResponse {
   }
 
   public BaseResponse() {
+
   }
 
   public String getMessage() {
@@ -33,6 +35,14 @@ public class BaseResponse {
 
   public void setStatus(int status) {
     this.status = status;
+  }
+
+  public boolean isSuccess() {
+    return success;
+  }
+
+  public void setSuccess(boolean success) {
+    this.success = success;
   }
 
 

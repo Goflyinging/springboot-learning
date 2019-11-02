@@ -29,21 +29,21 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-    @PostMapping //
+    @PostMapping //post   /books
     //@RequestMapping(method =RequestMethod.POST)
     public ResponseEntity<Book> create(@RequestBody Book book) {
         int isSuccess = bookService.insert(book);
         if (isSuccess == 0) {
             return new ResponseEntity<>(book, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>(book, HttpStatus.CREATED);
+        return new ResponseEntity<>(book, HttpStatus.CREATED);//201
     }
 
-    @DeleteMapping("/{id:\\d+}")
+    @DeleteMapping("/{id:\\d+}") //delete  /books/1
     public ResponseEntity<Integer> delete(@PathVariable("id") int id) {
         int isSuccess = bookService.deleteById(id);
         if (isSuccess == 0) {
-            return new ResponseEntity<>(id, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(id, HttpStatus.NOT_FOUND);//404
         }
         //请求收到但返回结果为空
         return new ResponseEntity<>(id, HttpStatus.OK);

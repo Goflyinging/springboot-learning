@@ -1,15 +1,15 @@
 package com.lxing.demo.controller;
 
 import com.lxing.demo.domain.Book;
-
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
 import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
-import java.lang.annotation.Annotation;
 
 /***
  * Created on 2017/11/3 <br>
@@ -38,6 +38,12 @@ public class RestTest {
 
     }
 
+//    @Test
+//    public void annotation2Test() {
+//        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(BookController1.class);
+//        BookController1 bean = annotationConfigApplicationContext.getBean(BookController1.class);
+//        System.out.println(bean);
+//    }
     @Test
     public void annotationTest() {
 //        @Documented –注解是否将包含在JavaDoc中
@@ -47,6 +53,15 @@ public class RestTest {
         Class bookControllerClass = BookController.class;
         System.out.println("-------->1"+bookControllerClass.getAnnotation(ResponseBody.class));
         System.out.println("-------->2"+bookControllerClass.getAnnotationsByType(ResponseBody.class));
+        Method method = bookControllerClass.getMethods()[0];
+        System.out.println(method);
+        Annotation[] annotations1 = method.getAnnotations();
+        Annotation annotation1 = method.getAnnotations()[0];
+        System.out.println(annotation1);
+        RequestMapping declaredAnnotation = method.getDeclaredAnnotation(RequestMapping.class);
+        System.out.println(declaredAnnotation.path());
+        RequestMapping methodAnnotation = method.getAnnotation(RequestMapping.class);
+        System.out.println(methodAnnotation.path());
         Annotation[] annotations = bookControllerClass.getDeclaredAnnotations();
         for (Annotation annotation : annotations) {
             System.out.println("-------->3"+annotation);

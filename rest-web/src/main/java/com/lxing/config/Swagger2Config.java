@@ -1,5 +1,6 @@
 package com.lxing.config;
 
+import java.util.concurrent.Executors;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -41,6 +42,7 @@ public class Swagger2Config {
      * @return
      */
     private ApiInfo apiInfo() {
+        Executors
         return new ApiInfoBuilder()
                 //页面标题
                 .title("Spring Boot 测试使用 Swagger2 构建RESTful API")

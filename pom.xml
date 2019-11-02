@@ -18,6 +18,7 @@
     <module>rest-helloWorld</module>
     <module>rest-web</module>
       <module>rest-client</module>
+    <module>rest-feign</module>
   </modules>
 
   <properties>

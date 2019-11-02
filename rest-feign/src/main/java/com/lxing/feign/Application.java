@@ -1,8 +1,7 @@
-package com.lxing.demo;
+package com.lxing.feign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /***
  * Created on 2017/10/10 <br>

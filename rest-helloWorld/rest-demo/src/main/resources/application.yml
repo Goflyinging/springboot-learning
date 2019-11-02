@@ -4,8 +4,8 @@ spring:
   application:
         name: rest-demo
 mybatis:
-  type-aliases-package: com.lxing
-  config-locations: classpath*:mybatis/mybatis-config.xml
+  type-aliases-package: com.lxing.demo.domain
+#  config-locations: classpath*:mybatis/mybatis-config.xml
   mapper-locations: classpath*:mybatis/mapper/*.xml
 
 
