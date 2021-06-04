@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <properties>
-        <httpclinet.version>4.5.1</httpclinet.version>
+        <httpclinet.version>4.5.13</httpclinet.version>
     </properties>
     <modelVersion>4.0.0</modelVersion>
 
