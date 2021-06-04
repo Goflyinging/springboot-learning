@@ -12,7 +12,7 @@
     <artifactId>rest-demo</artifactId>
 
     <properties>
-        <httpclinet.version>4.5.1</httpclinet.version>
+        <httpclinet.version>4.5.13</httpclinet.version>
     </properties>
     <dependencies>
         <!--httpclient-->
